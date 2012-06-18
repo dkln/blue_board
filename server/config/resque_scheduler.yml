@@ -1,0 +1,6 @@
+pivotal_tracker_activities:
+  cron: "30 * * * * *"
+  class: Pivotal
+  queue: notifications
+  description: "Fetches activities from PivotalTracker every minute."
+
