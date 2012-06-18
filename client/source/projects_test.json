@@ -1,0 +1,14 @@
+[
+  {
+    'name':'This is some project',
+    'progress':false,
+    'errors':0,
+    'failed':false
+  },
+  {
+    'name':'A failed project',
+    'progress':false,
+    'errors':0,
+    'failed':true
+  }
+]

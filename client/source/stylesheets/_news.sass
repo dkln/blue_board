@@ -1,0 +1,27 @@
+.news
+  display: table
+  width: 100%
+  border-collapse: seperate
+  border-spacing: 10px
+  text-transform: uppercase
+  margin: -10px
+  font-size: 20px
+
+  .column
+    width: 33%
+
+    h1
+      +border-top-radius(3px)
+      background-color: #a30
+      padding: 10px
+      margin-bottom: 2px
+      +single-box-shadow(rgba(0, 0, 0, 1))
+
+    .item
+      background-color: #444
+      margin-bottom: 2px
+      padding: 10px
+      +single-box-shadow(rgba(0, 0, 0, 1))
+
+      &:last-child
+        +border-bottom-radius(3px)

@@ -1,0 +1,67 @@
+.project
+  display: table
+  text-transform: uppercase
+  width: 100%
+  border-collapse: seperate
+  border-spacing: 3px
+  +rotateX(0deg)
+  +transition(.3s)
+
+  .column
+    +background(linear-gradient(top, #333, #555))
+    //+background(linear-gradient(top, #333 0%, #444 40%, #333 50%, #444 60%, #555 100%))
+    +single-text-shadow(rgba(0, 0, 0, .75), 0px, 1px, 4px)
+    +single-box-shadow(rgba(0, 0, 0, 1))
+    border: 2px solid #555
+    padding: 10px
+    display: table-cell
+    vertical-align: middle
+
+    &:first-child
+      +border-left-radius(3px)
+
+    &:last-child
+      +border-right-radius(3px)
+
+    &.icon
+      width: 5%
+      text-align: center
+
+    &.name
+      width: 35%
+
+    &.active
+      width: 20%
+      text-align: center
+
+    &.status
+      width: 20%
+      text-align: center
+
+    &.users
+      width: 20%
+
+      img
+        +inline-block
+        margin: 0
+        padding: 2px
+        height: 30px
+        background-color: #fff
+        +single-box-shadow
+
+  &.failed
+    .column
+      +background(linear-gradient(top, #800, #b00))
+      border: 2px solid #b00
+
+      .icon
+        color: #b00
+
+  &.building
+    .column
+      +background(linear-gradient(top, #a80, #ca0))
+      border: 2px solid #ca0
+
+  &.animation-hide
+    +transition(.3s)
+    +rotateX(90deg)

@@ -1,0 +1,64 @@
+html
+  head
+    == stylesheet_link_tag 'main.css'
+    == stylesheet_link_tag 'modernpics.css'
+    == javascript_include_tag 'jquery-1.7.2.min.js'
+    == javascript_include_tag 'app.js'
+
+    title BlueBoard
+
+  body
+    .canvas
+      .message
+        .time(data-time='13:37')
+          span 1
+          span 3
+          span
+            | :
+          span 3
+          span 7
+        | the message of the day
+
+      .projects
+        .project
+          .icon.column
+
+          .name.column
+            h2 This could be a project
+          .active.column
+          .status.column
+          .users.column
+            img(src='https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=30&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png')
+
+        .project.failed
+          .icon.column
+            i.icon-attention
+
+          .name.column
+            h2 A failed project
+          .active.column
+            | 12 min. ago
+          .status.column
+            | 10 errors
+          .users.column
+
+        .project
+          .icon.column
+
+          .name.column
+            h2 Some other project
+          .active.column
+          .status.column
+          .users.column
+
+        .project
+          .icon.column
+            i.icon-clock-alt
+
+          .name.column
+            h2 A building project
+          .active.column
+            | 20 min. ago
+          .status.column
+            | building
+          .users.column

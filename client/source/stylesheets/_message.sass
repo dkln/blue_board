@@ -1,0 +1,42 @@
+.message
+  text-transform: uppercase
+  color: #fff
+  text-align: center
+  font-size: 30px
+  position: relative
+  margin: 15px 0 35px 0
+
+  .time
+    position: absolute
+    left: 5px
+    top: 2px
+
+    span
+      +inline-block
+      +rotateX(0deg)
+      +transition(.5s)
+      background-color: #fff
+      color: #000
+      font-weight: bold
+      +single-box-shadow(rgba(0, 0, 0, 1))
+      +background(linear-gradient(top, #eee 0%, #ccc 48%, #bbb 50%, #ccc 52%, #eee 100%))
+      border: 1px solid #fff
+      margin-top: -10px
+      margin-right: 2px
+      text-shadow: 0px 2px 0px #fff
+      width: 30px
+      height: 40px
+      line-height: 38px
+
+      &:first-child
+        +border-left-radius(3px)
+
+      &:last-child
+        +border-right-radius(3px)
+
+      &.animate-hide
+        +rotateX(90deg)
+        +transition(.5s)
+
+  h1
+    +single-text-shadow(rgba(0, 0, 0, 1))
