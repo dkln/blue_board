@@ -62,15 +62,20 @@ ProjectBoard =
     @projects[index].progress != element.hasClass('building')
 
   isErrorChanged: (element, index) ->
-    @projects[index].progress != element.hasClass('error')
+    @projects[index].errors > 0 && !element.hasClass('error')
 
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
 
-    if @projects[index].error
+    if @projects[index].errors > 0
       element.addClass('error')
     else
       element.removeClass('error')
+
+    if @projects[index].progress
+      element.addClass('building')
+    else
+      element.removeClass('building')
 
     if @projects[index].failed
       element.addClass('failed')

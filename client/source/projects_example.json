@@ -17,5 +17,19 @@
     "users": [
       "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
     ]
+  },
+  {
+    "name":"A project with errors",
+    "progress":false,
+    "errors":2,
+    "failed":false,
+    "users": []
+  },
+  {
+    "name":"Building in progress",
+    "progress":true,
+    "errors":0,
+    "failed":false,
+    "users": []
   }
 ]
