@@ -9,10 +9,12 @@ TimeBoard =
     elements  = $('.message .time span')
 
     i = 0
+    changedIndex = 0
 
     while i < newString.length
       if newString[i] != oldString[i]
-        @changeElement($(elements[i]), newString[i])
+        @changeElement(changedIndex, $(elements[i]), newString[i])
+        changedIndex++
 
       i++
 
@@ -26,10 +28,10 @@ TimeBoard =
 
     "#{@format(newTime.getHours())}:#{@format(newTime.getMinutes())}"
 
-  changeElement: (element, newToken) ->
-    element.addClass('animate-hide')
-    setTimeout((-> element.text(newToken)), 300)
-    setTimeout((-> element.removeClass('animate-hide')), 400)
+  changeElement: (index, element, newToken) ->
+    setTimeout((-> element.addClass('animate-hide')), index * 100)
+    setTimeout((-> element.text(newToken)), 300 + index * 100)
+    setTimeout((-> element.removeClass('animate-hide')), 400 + index * 100)
 
   format: (number) ->
     if number.toString().length == 1

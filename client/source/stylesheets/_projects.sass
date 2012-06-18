@@ -27,6 +27,9 @@
       width: 5%
       text-align: center
 
+      i
+        display: none
+
     &.name
       width: 35%
 
@@ -57,11 +60,20 @@
       .icon
         color: #b00
 
+  &.error
+    .icon
+      i.icon-attention
+        +inline-block
+
   &.building
+    .icon
+      i.icon-clock-alt
+        +inline-block
+
     .column
       +background(linear-gradient(top, #a80, #ca0))
       border: 2px solid #ca0
 
-  &.animation-hide
+  &.animate-hide
     +transition(.3s)
     +rotateX(90deg)
