@@ -24,6 +24,81 @@ To build the whole project, just run middleman build:
 
     middleman build
 
+## Json payloads
+
+There are two types of JSON payloads. The current project status and notifications.
+
+Format of status updates:
+
+    [
+      {
+        "name":"This is some project",
+        "progress":false,
+        "errors":0,
+        "failed":false,
+        "users": [
+          "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140",
+          "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+        ]
+      },
+      {
+        "name":"A failed project",
+        "progress":false,
+        "errors":0,
+        "failed":true,
+        "users": [
+          "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+        ]
+      },
+      {
+        "name":"A project with errors",
+        "progress":false,
+        "errors":2,
+        "failed":false,
+        "users": []
+      },
+      {
+        "name":"Building in progress",
+        "progress":true,
+        "errors":0,
+        "failed":false,
+        "users": []
+      }
+    ]
+
+Format of notifications updates:
+
+    [
+      {
+        "created_at":"2012-06-19T06:50:30Z",
+        "description":"Some user added comment: \"Disabled status updates for dashboard.\"",
+        "external_identifier":"209630689",
+        "id":1,
+        "service":"pivotal",
+        "severity":null,
+        "updated_at":"2012-06-19T06:50:30Z"
+      },
+      {
+        "created_at":"2012-06-19T06:50:30Z",
+        "description":"Other user added comment: \"As an administrative user, I want to delete a selected user, so I can revoke access for some people\"",
+        "external_identifier":"209629451",
+        "id":2,
+        "service":"pivotal",
+        "severity":null,
+        "updated_at":"2012-06-19T06:50:30Z"
+      },
+      {
+        "created_at":"2012-06-19T06:50:30Z",
+        "description":"Foo user added comment: \"This is some great test message\"",
+        "external_identifier":"209573863",
+        "id":3,
+        "service":"pivotal",
+        "severity":null,
+        "updated_at":"2012-06-19T06:50:30Z"
+      }
+    ]
+
+
 # License and credits
 
 Use it and have fun with it!
