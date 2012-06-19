@@ -18,11 +18,11 @@ You can place this on any webserver that serves static files.
 
 Middleman is used to compile the whole project. To develop locally, just run middleman
 
-  middleman server
+    middleman server
 
 To build the whole project, just run middleman build:
 
-  middleman build
+    middleman build
 
 # License and credits
 
