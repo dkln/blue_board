@@ -72,7 +72,7 @@ Format of notifications updates:
       {
         "created_at":"2012-06-19T06:50:30Z",
         "description":"Some user added comment: \"Disabled status updates for dashboard.\"",
-        "external_identifier":"209630689",
+        "external_identifier":"1337",
         "id":1,
         "service":"pivotal",
         "severity":null,
@@ -81,7 +81,7 @@ Format of notifications updates:
       {
         "created_at":"2012-06-19T06:50:30Z",
         "description":"Other user added comment: \"As an administrative user, I want to delete a selected user, so I can revoke access for some people\"",
-        "external_identifier":"209629451",
+        "external_identifier":"1338",
         "id":2,
         "service":"pivotal",
         "severity":null,
@@ -90,7 +90,7 @@ Format of notifications updates:
       {
         "created_at":"2012-06-19T06:50:30Z",
         "description":"Foo user added comment: \"This is some great test message\"",
-        "external_identifier":"209573863",
+        "external_identifier":"1339",
         "id":3,
         "service":"pivotal",
         "severity":null,
