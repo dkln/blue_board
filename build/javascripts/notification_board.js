@@ -61,7 +61,7 @@
         element.removeClass('notify');
       }
       this.index++;
-      if (this.index >= this.notifications) {
+      if (this.index >= this.notifications.length) {
         return this.index = 0;
       }
     },

@@ -50,7 +50,7 @@ NotificationBoard =
       element.removeClass('notify')
 
     @index++
-    @index = 0 if @index >= @notifications
+    @index = 0 if @index >= @notifications.length
 
   handleResponse: (data) ->
     if data != @oldNotificationPayload
