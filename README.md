@@ -34,7 +34,10 @@ Format of status updates:
       {
         "name":"This is some project",
         "progress":false,
+        "feature_count":25,
+        "delivered_feature_count":18,
         "errors":0,
+        "rejected_stories":0,
         "failed":false,
         "users": [
           "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140",
@@ -44,7 +47,10 @@ Format of status updates:
       {
         "name":"A failed project",
         "progress":false,
+        "feature_count":10,
+        "delivered_feature_count":8,
         "errors":0,
+        "rejected_stories":2,
         "failed":true,
         "users": [
           "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
@@ -53,14 +59,20 @@ Format of status updates:
       {
         "name":"A project with errors",
         "progress":false,
-        "errors":2,
+        "feature_count":17,
+        "delivered_feature_count":12,
+        "errors":37,
+        "rejected_stories":10,
         "failed":false,
         "users": []
       },
       {
         "name":"Building in progress",
         "progress":true,
+        "feature_count":10,
+        "delivered_feature_count":0,
         "errors":0,
+        "rejected_stories":1,
         "failed":false,
         "users": []
       }
