@@ -81,7 +81,7 @@ ProjectBoard =
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
     element.find('.errors').text(@projects[index].errors)
-    element.find('.rejects').text(@projects[index].rejects)
+    element.find('.rejected_stories').text(@projects[index].rejects)
 
     if @projects[index].errors > 0
       element.addClass('error')
