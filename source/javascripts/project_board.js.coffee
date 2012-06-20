@@ -32,7 +32,7 @@ ProjectBoard =
           <div class='name column'>
             <h2></h2>
           </div>
-          <div class='active column'></div>
+          <div class='errors column'></div>
           <div class='rejects column'></div>
           <div class='users column'></div>
         </div>
@@ -72,6 +72,7 @@ ProjectBoard =
 
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
+    element.find('.errors').text(@projects[index].errors)
     element.find('.rejects').text(@projects[index].rejects)
 
     if @projects[index].errors > 0

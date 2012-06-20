@@ -131,7 +131,7 @@ body {
         display: none; }
     .project .column.name {
       width: 35%; }
-    .project .column.active {
+    .project .column.errors {
       width: 20%;
       text-align: center; }
     .project .column.rejects {
