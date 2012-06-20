@@ -2,6 +2,8 @@
   {
     "name":"This is some project",
     "progress":false,
+    "feature_count":25,
+    "delivered_feature_count":18,
     "errors":0,
     "rejects":0,
     "failed":false,
@@ -13,6 +15,8 @@
   {
     "name":"A failed project",
     "progress":false,
+    "feature_count":10,
+    "delivered_feature_count":8,
     "errors":0,
     "rejects":2,
     "failed":true,
@@ -23,7 +27,9 @@
   {
     "name":"A project with errors",
     "progress":false,
-    "errors":2,
+    "feature_count":17,
+    "delivered_feature_count":12,
+    "errors":37,
     "rejects":10,
     "failed":false,
     "users": []
@@ -31,6 +37,8 @@
   {
     "name":"Building in progress",
     "progress":true,
+    "feature_count":10,
+    "delivered_feature_count":0,
     "errors":0,
     "rejects":1,
     "failed":false,

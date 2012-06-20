@@ -2,9 +2,9 @@
   display: table
   text-transform: uppercase
   width: 100%
-  border-collapse: seperate
+  border-collapse: separate
   border-spacing: 3px
-  height: 55px
+  height: 65px
   +rotateX(0deg)
   +transition(.3s)
 
@@ -32,18 +32,43 @@
         display: none
 
     &.name
-      width: 35%
+      width: 40%
+
+    &.progress
+      width: 20%
+      padding: 0
+      text-align: center
+      position: relative
+
+      .bar
+        +background(linear-gradient(top, #909090, #fff))
+        +border-radius(2px)
+        +transition-property(width)
+        +transition-duration(2s)
+        position: absolute
+        top: -2px
+        left: -2px
+        border: 2px solid #fff
+        display: block
+        width: 0px
+        height: 100%
+
+      .count
+        position: absolute
+        top: 0
+        width: 100%
+        line-height: 55px
 
     &.errors
-      width: 20%
+      width: 5%
       text-align: center
 
     &.rejects
-      width: 20%
+      width: 5%
       text-align: center
 
     &.users
-      width: 20%
+      width: 25%
 
       img
         +inline-block

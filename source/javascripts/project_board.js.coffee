@@ -32,6 +32,10 @@ ProjectBoard =
           <div class='name column'>
             <h2></h2>
           </div>
+          <div class='progress column'>
+            <span class='bar'></span>
+            <span class='count'></span>
+          </div>
           <div class='errors column'></div>
           <div class='rejects column'></div>
           <div class='users column'></div>
@@ -70,6 +74,10 @@ ProjectBoard =
   isUsersChanged: (element, index) ->
     @projects[index].users != @getImages(element)
 
+  getImages: (element) ->
+    if element.find('img')
+      images = $(image).attr('src') for image in element.find('img')
+
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
     element.find('.errors').text(@projects[index].errors)
@@ -91,20 +99,24 @@ ProjectBoard =
       element.removeClass('failed')
 
     @setUsers(element, index)
+    @setProgress(element, index)
+
+  updateProject: (element, index, updateIndex) ->
+    setTimeout((-> element.addClass('animate-hide')), updateIndex * 400)
+    setTimeout((=> @setProject(element, index)), 300 + updateIndex * 400)
+    setTimeout((-> element.removeClass('animate-hide')), 400 + updateIndex * 400)
 
   setUsers: (element, index) ->
     if @isUsersChanged(element, index)
       for user in @projects[index].users
         element.find('.users').append("<img src='#{user}' />")
 
-  getImages: (element) ->
-    if element.find('img')
-      images = $(image).attr('src') for image in element.find('img')
+  setProgress: (element, index) ->
+    element.find('.progress .bar').width("#{@progressWidth(index)}%")
+    element.find('.progress .count').text("#{@projects[index].delivered_feature_count}/#{@projects[index].feature_count}")
 
-  updateProject: (element, index, updateIndex) ->
-    setTimeout((-> element.addClass('animate-hide')), updateIndex * 400)
-    setTimeout((=> @setProject(element, index)), 300 + updateIndex * 400)
-    setTimeout((-> element.removeClass('animate-hide')), 400 + updateIndex * 400)
+  progressWidth: (index) ->
+    (100 / @projects[index].feature_count) * @projects[index].delivered_feature_count
 
   update: ->
     $.ajax(
