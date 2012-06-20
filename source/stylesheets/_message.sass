@@ -9,7 +9,7 @@
   .time
     position: absolute
     left: 5px
-    top: 2px
+    top: 0px
 
     span
       +inline-block
@@ -17,16 +17,17 @@
       +transition(.5s)
       background-color: #fff
       color: #000
+      font-size: 70px
       font-weight: bold
       +single-box-shadow(rgba(0, 0, 0, 1))
       +background(linear-gradient(top, #eee 0%, #ccc 48%, #bbb 50%, #ccc 52%, #eee 100%))
       border: 1px solid #fff
-      margin-top: -10px
+      margin-top: -25px
       margin-right: 2px
       text-shadow: 0px 2px 0px #fff
-      width: 30px
-      height: 40px
-      line-height: 38px
+      width: 67px
+      height: 115px
+      line-height: 115px
 
       &:first-child
         +border-left-radius(3px)
@@ -37,6 +38,13 @@
       &.animate-hide
         +rotateX(90deg)
         +transition(.5s)
+
+  .date
+    position: absolute
+    top: 105px
+    left: 2px
+    right: 2px
+    padding: 10px
 
   h1
     +single-text-shadow(rgba(0, 0, 0, 1))
