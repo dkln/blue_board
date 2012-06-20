@@ -66,7 +66,23 @@
     isErrorChanged: function(element, index) {
       return this.projects[index].errors > 0 && !element.hasClass('error');
     },
+    isUsersChanged: function(element, index) {
+      return this.projects[index].users !== this.getImages(element);
+    },
+    getImages: function(element) {
+      var image, images, _i, _len, _ref, _results;
+      if (element.find('img')) {
+        _ref = element.find('img');
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          image = _ref[_i];
+          _results.push(images = $(image).attr('src'));
+        }
+        return _results;
+      }
+    },
     setProject: function(element, index) {
+      var user, _i, _len, _ref, _results;
       element.find('.name h2').text(this.projects[index].name);
       if (this.projects[index].errors > 0) {
         element.addClass('error');
@@ -79,9 +95,18 @@
         element.removeClass('building');
       }
       if (this.projects[index].failed) {
-        return element.addClass('failed');
+        element.addClass('failed');
       } else {
-        return element.removeClass('failed');
+        element.removeClass('failed');
+      }
+      if (this.isUsersChanged(element, index)) {
+        _ref = this.projects[index].users;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          user = _ref[_i];
+          _results.push(element.find('.users').append("<img src='" + user + "' />"));
+        }
+        return _results;
       }
     },
     updateProject: function(element, index, updateIndex) {

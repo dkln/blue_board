@@ -145,7 +145,7 @@ body {
         display: inline-block;
         vertical-align: middle;
         *vertical-align: auto;
-        margin: 0;
+        margin-right: 5px;
         padding: 2px;
         height: 30px;
         background-color: white;

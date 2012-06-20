@@ -64,6 +64,13 @@ ProjectBoard =
   isErrorChanged: (element, index) ->
     @projects[index].errors > 0 && !element.hasClass('error')
 
+  isUsersChanged: (element, index) ->
+    @projects[index].users != @getImages(element)
+
+  getImages: (element) ->
+    if element.find('img')
+      images = $(image).attr('src') for image in element.find('img')
+
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
 
@@ -81,6 +88,10 @@ ProjectBoard =
       element.addClass('failed')
     else
       element.removeClass('failed')
+
+    if @isUsersChanged(element, index)
+      for user in @projects[index].users
+        element.find('.users').append("<img src='#{user}' />")
 
   updateProject: (element, index, updateIndex) ->
     setTimeout((-> element.addClass('animate-hide')), updateIndex * 400)
