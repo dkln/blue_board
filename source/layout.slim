@@ -4,6 +4,7 @@ html
     == stylesheet_link_tag 'modernpics.css'
     == javascript_include_tag 'jquery-1.7.2.min.js'
     == javascript_include_tag 'time_board.js'
+    == javascript_include_tag 'date_board.js'
     == javascript_include_tag 'project_board.js'
     == javascript_include_tag 'notification_board.js'
 
@@ -19,7 +20,8 @@ html
             | :
           span 0
           span 0
-        | the message of the day
+        .date(data-date='')
+          span
 
       .projects
 
