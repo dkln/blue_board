@@ -3,6 +3,7 @@
     "name":"This is some project",
     "progress":false,
     "errors":0,
+    "rejects":0,
     "failed":false,
     "users": [
       "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140",
@@ -13,6 +14,7 @@
     "name":"A failed project",
     "progress":false,
     "errors":0,
+    "rejects":2,
     "failed":true,
     "users": [
       "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
@@ -22,6 +24,7 @@
     "name":"A project with errors",
     "progress":false,
     "errors":2,
+    "rejects":10,
     "failed":false,
     "users": []
   },
@@ -29,6 +32,7 @@
     "name":"Building in progress",
     "progress":true,
     "errors":0,
+    "rejects":1,
     "failed":false,
     "users": []
   }

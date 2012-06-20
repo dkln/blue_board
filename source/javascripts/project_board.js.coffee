@@ -33,7 +33,7 @@ ProjectBoard =
             <h2></h2>
           </div>
           <div class='active column'></div>
-          <div class='status column'></div>
+          <div class='rejects column'></div>
           <div class='users column'></div>
         </div>
       ")
@@ -64,15 +64,15 @@ ProjectBoard =
   isErrorChanged: (element, index) ->
     @projects[index].errors > 0 && !element.hasClass('error')
 
+  isRejectsChanged: (element, index) ->
+    @projects[index].rejects > 0 && @projects[index].rejects != element.find('.rejects').text()
+
   isUsersChanged: (element, index) ->
     @projects[index].users != @getImages(element)
 
-  getImages: (element) ->
-    if element.find('img')
-      images = $(image).attr('src') for image in element.find('img')
-
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
+    element.find('.rejects').text(@projects[index].rejects)
 
     if @projects[index].errors > 0
       element.addClass('error')
@@ -89,9 +89,16 @@ ProjectBoard =
     else
       element.removeClass('failed')
 
+    @setUsers(element, index)
+
+  setUsers: (element, index) ->
     if @isUsersChanged(element, index)
       for user in @projects[index].users
         element.find('.users').append("<img src='#{user}' />")
+
+  getImages: (element) ->
+    if element.find('img')
+      images = $(image).attr('src') for image in element.find('img')
 
   updateProject: (element, index, updateIndex) ->
     setTimeout((-> element.addClass('animate-hide')), updateIndex * 400)

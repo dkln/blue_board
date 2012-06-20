@@ -134,7 +134,7 @@ body {
     .project .column.active {
       width: 20%;
       text-align: center; }
-    .project .column.status {
+    .project .column.rejects {
       width: 20%;
       text-align: center; }
     .project .column.users {

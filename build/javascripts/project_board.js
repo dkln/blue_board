@@ -27,7 +27,7 @@
       var index, _i, _results;
       _results = [];
       for (index = _i = 1; 1 <= numberToBuild ? _i <= numberToBuild : _i >= numberToBuild; index = 1 <= numberToBuild ? ++_i : --_i) {
-        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>          </div>          <div class='name column'>            <h2></h2>          </div>          <div class='active column'></div>          <div class='status column'></div>          <div class='users column'></div>        </div>      "));
+        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>          </div>          <div class='name column'>            <h2></h2>          </div>          <div class='active column'></div>          <div class='rejects column'></div>          <div class='users column'></div>        </div>      "));
       }
       return _results;
     },
@@ -66,24 +66,15 @@
     isErrorChanged: function(element, index) {
       return this.projects[index].errors > 0 && !element.hasClass('error');
     },
+    isRejectsChanged: function(element, index) {
+      return this.projects[index].rejects > 0 && this.projects[index].rejects !== element.find('.rejects').text();
+    },
     isUsersChanged: function(element, index) {
       return this.projects[index].users !== this.getImages(element);
     },
-    getImages: function(element) {
-      var image, images, _i, _len, _ref, _results;
-      if (element.find('img')) {
-        _ref = element.find('img');
-        _results = [];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          image = _ref[_i];
-          _results.push(images = $(image).attr('src'));
-        }
-        return _results;
-      }
-    },
     setProject: function(element, index) {
-      var user, _i, _len, _ref, _results;
       element.find('.name h2').text(this.projects[index].name);
+      element.find('.rejects').text(this.projects[index].rejects);
       if (this.projects[index].errors > 0) {
         element.addClass('error');
       } else {
@@ -99,12 +90,28 @@
       } else {
         element.removeClass('failed');
       }
+      return this.setUsers(element, index);
+    },
+    setUsers: function(element, index) {
+      var user, _i, _len, _ref, _results;
       if (this.isUsersChanged(element, index)) {
         _ref = this.projects[index].users;
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           user = _ref[_i];
           _results.push(element.find('.users').append("<img src='" + user + "' />"));
+        }
+        return _results;
+      }
+    },
+    getImages: function(element) {
+      var image, images, _i, _len, _ref, _results;
+      if (element.find('img')) {
+        _ref = element.find('img');
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          image = _ref[_i];
+          _results.push(images = $(image).attr('src'));
         }
         return _results;
       }
