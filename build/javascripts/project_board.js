@@ -27,7 +27,7 @@
       var index, _i, _results;
       _results = [];
       for (index = _i = 1; 1 <= numberToBuild ? _i <= numberToBuild : _i >= numberToBuild; index = 1 <= numberToBuild ? ++_i : --_i) {
-        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>          </div>          <div class='name column'>            <h2></h2>          </div>          <div class='errors column'></div>          <div class='rejects column'></div>          <div class='users column'></div>        </div>      "));
+        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>          </div>          <div class='name column'>            <h2></h2>          </div>          <div class='progress column'>            <span class='bar'></span>            <span class='count'></span>          </div>          <div class='errors column'></div>          <div class='rejects column'></div>          <div class='users column'></div>        </div>      "));
       }
       return _results;
     },
@@ -72,6 +72,18 @@
     isUsersChanged: function(element, index) {
       return this.projects[index].users !== this.getImages(element);
     },
+    getImages: function(element) {
+      var image, images, _i, _len, _ref, _results;
+      if (element.find('img')) {
+        _ref = element.find('img');
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          image = _ref[_i];
+          _results.push(images = $(image).attr('src'));
+        }
+        return _results;
+      }
+    },
     setProject: function(element, index) {
       element.find('.name h2').text(this.projects[index].name);
       element.find('.errors').text(this.projects[index].errors);
@@ -91,7 +103,20 @@
       } else {
         element.removeClass('failed');
       }
-      return this.setUsers(element, index);
+      this.setUsers(element, index);
+      return this.setProgress(element, index);
+    },
+    updateProject: function(element, index, updateIndex) {
+      var _this = this;
+      setTimeout((function() {
+        return element.addClass('animate-hide');
+      }), updateIndex * 400);
+      setTimeout((function() {
+        return _this.setProject(element, index);
+      }), 300 + updateIndex * 400);
+      return setTimeout((function() {
+        return element.removeClass('animate-hide');
+      }), 400 + updateIndex * 400);
     },
     setUsers: function(element, index) {
       var user, _i, _len, _ref, _results;
@@ -105,29 +130,12 @@
         return _results;
       }
     },
-    getImages: function(element) {
-      var image, images, _i, _len, _ref, _results;
-      if (element.find('img')) {
-        _ref = element.find('img');
-        _results = [];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          image = _ref[_i];
-          _results.push(images = $(image).attr('src'));
-        }
-        return _results;
-      }
+    setProgress: function(element, index) {
+      element.find('.progress .bar').width("" + (this.progressWidth(index)) + "%");
+      return element.find('.progress .count').text("" + this.projects[index].delivered_feature_count + "/" + this.projects[index].feature_count);
     },
-    updateProject: function(element, index, updateIndex) {
-      var _this = this;
-      setTimeout((function() {
-        return element.addClass('animate-hide');
-      }), updateIndex * 400);
-      setTimeout((function() {
-        return _this.setProject(element, index);
-      }), 300 + updateIndex * 400);
-      return setTimeout((function() {
-        return element.removeClass('animate-hide');
-      }), 400 + updateIndex * 400);
+    progressWidth: function(index) {
+      return (100 / this.projects[index].feature_count) * this.projects[index].delivered_feature_count;
     },
     update: function() {
       var _this = this;
