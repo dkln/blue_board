@@ -15,30 +15,44 @@
       +inline-block
       +rotateX(0deg)
       +transition(.5s)
-      background-color: #fff
-      color: #000
+      background-color: #000
+      color: #fff
       font-size: 70px
       font-weight: bold
-      +single-box-shadow(rgba(0, 0, 0, 1))
-      +background(linear-gradient(top, #eee 0%, #ccc 48%, #bbb 50%, #ccc 52%, #eee 100%))
-      border: 1px solid #fff
+      +background(linear-gradient(top, #000 0%, #333 48%, #333 50%, #333 52%, #000 100%))
+      border: 1px solid #000
       margin-top: -25px
       margin-right: 2px
-      text-shadow: 0px 2px 0px #fff
-      width: 67px
+      text-shadow: 0px 2px 0px #000
+      width: 77px
       height: 115px
       line-height: 115px
 
       &:first-child
-        +border-left-radius(3px)
 
       &:last-child
-        +border-right-radius(3px)
         margin-right: 0
 
       &.animate-hide
         +rotateX(90deg)
         +transition(.5s)
+
+      &.hour-separator
+        background: transparent
+        border: none
+        width: 30px
+
+  .separator1, .separator2
+    position: absolute
+    top: 37px
+    border: 2px solid rgba(0, 0, 0, 0.5)
+    width: 78px * 2
+
+  .separator1
+    left: 5px
+
+  .separator2
+    right: 3px
 
   .date
     position: absolute
@@ -48,4 +62,3 @@
     padding: 10px
 
   h1
-    +single-text-shadow(rgba(0, 0, 0, 1))

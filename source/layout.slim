@@ -13,6 +13,14 @@ html
   body
     .canvas
       .block
+        .header
+          .project
+            .column.icon
+            .column.name project
+            .column.progress delivered
+            .column.errors
+            .column.rejected_stories
+            .column.users project members
         .projects
 
       .block.sidebar
@@ -20,10 +28,11 @@ html
           .time(data-time='00:00')
             span 0
             span 0
-            span
-              | :
+            span.hour-separator
             span 0
             span 0
+          .separator1
+          .separator2
           .date(data-date='')
             span
 

@@ -28,17 +28,26 @@ ProjectBoard =
           <div class='icon column'>
             <i class='icon-attention'></i>
             <i class='icon-clock-alt'></i>
+            <div class='separator'></div>
           </div>
           <div class='name column'>
             <h2></h2>
+            <div class='separator'></div>
           </div>
           <div class='progress column'>
             <span class='bar'></span>
             <span class='count'></span>
+            <div class='separator'></div>
           </div>
-          <div class='errors column'></div>
-          <div class='rejected_stories column'></div>
-          <div class='users column'></div>
+          <div class='errors column'>
+            <div class='separator'></div>
+          </div>
+          <div class='rejected_stories column'>
+            <div class='separator'></div>
+          </div>
+          <div class='users column'>
+            <div class='separator'></div>
+          </div>
         </div>
       ")
 
