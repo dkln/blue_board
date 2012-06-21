@@ -125,19 +125,19 @@ in project\_board.js and notification\_board.js.
 
 Project board:
 
-  (function() {
-    var ProjectBoard;
-
-    ProjectBoard = {
-      url: 'the_url_of_your_choice',
+      (function() {
+        var ProjectBoard;
+    
+        ProjectBoard = {
+          url: 'the_url_of_your_choice',
 
 And in the notifications area:
 
-  (function() {
-    var NotificationBoard;
-
-    NotificationBoard = {
-      url: '/notifications',
+      (function() {
+        var NotificationBoard;
+    
+        NotificationBoard = {
+          url: '/notifications',
 
 
 # License and credits
