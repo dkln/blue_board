@@ -2,7 +2,7 @@
   var ProjectBoard;
 
   ProjectBoard = {
-    url: 'projects',
+    url: 'projects.json',
     projects: [],
     oldProjectCount: 0,
     init: function() {
@@ -27,7 +27,7 @@
       var index, _i, _results;
       _results = [];
       for (index = _i = 1; 1 <= numberToBuild ? _i <= numberToBuild : _i >= numberToBuild; index = 1 <= numberToBuild ? ++_i : --_i) {
-        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>            <div class='separator'></div>          </div>          <div class='name column'>            <h2></h2>            <div class='separator'></div>          </div>          <div class='progress column'>            <span class='bar'></span>            <span class='count'></span>            <div class='separator'></div>          </div>          <div class='errors column'>            <h2></h2>            <div class='separator'></div>          </div>          <div class='rejected_stories column'>            <h2></h2>            <div class='separator'></div>          </div>          <div class='users column'>            <div class='separator'></div>          </div>        </div>      "));
+        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>            <div class='separator'></div>          </div>          <div class='name column'>            <h2></h2>            <div class='separator'></div>          </div>          <div class='progress column'>            <span class='bar'></span>            <span class='count'></span>            <div class='separator'></div>          </div>          <div class='errors column'>            <h2></h2>            <div class='separator'></div>          </div>          <div class='rejected_features column'>            <h2></h2>            <div class='separator'></div>          </div>          <div class='users column'>            <div class='separator'></div>          </div>        </div>      "));
       }
       return _results;
     },
@@ -87,7 +87,7 @@
     setProject: function(element, index) {
       element.find('.name h2').text(this.projects[index].name);
       element.find('.errors h2').text(this.projects[index].errors);
-      element.find('.rejected_stories h2').text(this.projects[index].failed_feature_count);
+      element.find('.rejected_features h2').text(this.projects[index].rejected_feature_count);
       if (this.projects[index].errors > 0) {
         element.addClass('error');
       } else {

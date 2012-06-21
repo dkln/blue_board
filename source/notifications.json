@@ -1,0 +1,17 @@
+[
+  {
+    "description":"Some user added comment: \"Disabled status updates for dashboard.\"",
+    "service":"pivotal",
+    "status":"ok",
+  },
+  {
+    "description":"Other user added comment: \"As an administrative user, I want to delete a selected user, so I can revoke access for some people\"",
+    "service":"pivotal",
+    "status":"notify",
+  },
+  {
+    "description":"Foo user added comment: \"This is some great test message\"",
+    "service":"pivotal",
+    "status":"fail",
+  }
+]

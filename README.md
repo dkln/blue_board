@@ -5,6 +5,8 @@ updates and notifications.
 
 Inspired by the very slick Panic! board and NS "blauwe bord"
 
+![screenshot](https://github.com/dkln/blue_board/raw/master/screenshot.png)
+
 ## Server
 
 Can be used in combination with Robin Roestenburg's compatible [BlueBoard server](https://github.com/robinroestenburg/blue_board_server).
@@ -28,91 +30,129 @@ To build the whole project, just run middleman build:
 
 There are two types of JSON payloads. The current project status and notifications.
 
-Format of status updates:
+### Status updates
+
+Example of JSON payload:
+
+  [
+    {
+      "name":"This is some project",
+      "progress":false,
+      "feature_count":25,
+      "delivered_feature_count":18,
+      "errors":0,
+      "rejected_feature_count":0,
+      "failed":false,
+      "contributors": [
+          "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140", "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+      ]
+    },
+    {
+      "name":"A failed project",
+      "progress":false,
+      "feature_count":10,
+      "delivered_feature_count":10,
+      "errors":0,
+      "rejected_feature_count":2,
+      "failed":true,
+      "contributors": [
+        "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+      ]
+    },
+    {
+      "name":"A project with errors",
+      "progress":false,
+      "feature_count":17,
+      "delivered_feature_count":12,
+      "errors":37,
+      "rejected_feature_count":10,
+      "failed":false,
+      "contributors": []
+    },
+    {
+      "name":"Building in progress",
+      "progress":true,
+      "feature_count":10,
+      "delivered_feature_count":0,
+      "errors":0,
+      "rejected_feature_count":1,
+      "failed":false,
+      "contributors": []
+    }
+  ]
+
+
+* name: Short description for the project.
+* progress: Indicates of the project is currently building (possible values: false/true).
+* feature\_count: The number of total to-be-developed features.
+* delivered\_feature\_count: The number of total accepted features.
+* errors: The number of errors in production.
+* rejected\_feature\_count: The number of bugs/rejected features.
+* failed: Indicates if the project has failed building (possible values: false/true).
+* contributors: Array of URLs to (gr)avatars.
+
+### Notification updates
+
+Example of JSON payload:
 
     [
       {
-        "name":"This is some project",
-        "progress":false,
-        "feature_count":25,
-        "delivered_feature_count":18,
-        "errors":0,
-        "rejected_stories":0,
-        "failed":false,
-        "users": [
-          "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140",
-          "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
-        ]
-      },
-      {
-        "name":"A failed project",
-        "progress":false,
-        "feature_count":10,
-        "delivered_feature_count":8,
-        "errors":0,
-        "rejected_stories":2,
-        "failed":true,
-        "users": [
-          "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
-        ]
-      },
-      {
-        "name":"A project with errors",
-        "progress":false,
-        "feature_count":17,
-        "delivered_feature_count":12,
-        "errors":37,
-        "rejected_stories":10,
-        "failed":false,
-        "users": []
-      },
-      {
-        "name":"Building in progress",
-        "progress":true,
-        "feature_count":10,
-        "delivered_feature_count":0,
-        "errors":0,
-        "rejected_stories":1,
-        "failed":false,
-        "users": []
-      }
-    ]
-
-Format of notifications updates:
-
-    [
-      {
-        "created_at":"2012-06-19T06:50:30Z",
         "description":"Some user added comment: \"Disabled status updates for dashboard.\"",
-        "external_identifier":"1337",
-        "id":1,
         "service":"pivotal",
-        "severity":null,
-        "updated_at":"2012-06-19T06:50:30Z"
+        "status":"ok",
       },
       {
-        "created_at":"2012-06-19T06:50:30Z",
         "description":"Other user added comment: \"As an administrative user, I want to delete a selected user, so I can revoke access for some people\"",
-        "external_identifier":"1338",
-        "id":2,
         "service":"pivotal",
-        "severity":null,
-        "updated_at":"2012-06-19T06:50:30Z"
+        "status":"notify",
       },
       {
-        "created_at":"2012-06-19T06:50:30Z",
         "description":"Foo user added comment: \"This is some great test message\"",
-        "external_identifier":"1339",
-        "id":3,
         "service":"pivotal",
-        "severity":null,
-        "updated_at":"2012-06-19T06:50:30Z"
+        "status":"fail",
       }
     ]
+
+
+* description: The description of the notification.
+* service: The service that provided the notification.
+* status: Determines the purpose of the notification (possible values: ok/notify/fail).
+
+## Configuration
+
+By default, the JSON payloads are located on /projects.json and /notifications.json. You can change these URLs
+in project\_board.js and notification\_board.js.
+
+Project board:
+
+  (function() {
+    var ProjectBoard;
+
+    ProjectBoard = {
+      url: 'the_url_of_your_choice',
+
+And in the notifications area:
+
+  (function() {
+    var NotificationBoard;
+
+    NotificationBoard = {
+      url: '/notifications',
 
 
 # License and credits
 
 Use it and have fun with it!
+
+Credits to:
+
+* [Kevin Tuhumury](https://github.com/kevintuhumury)
+* [Robin Roestenburg](https://github.com/robinroestenburg)
+
+And special thanx for the fonts:
+
+* [modernpics](https://github.com/fontello/modernpics.font)
+* [moonbase press](http://dionaea.com/)
+* [google](http://www.google.com/webfonts)
 
 Copyright 2012, Diederick Lawson - Altovista. Released under the FreeBSD license.

@@ -194,7 +194,7 @@ body {
     .project .column.errors {
       width: 5%;
       text-align: center; }
-    .project .column.rejected_stories {
+    .project .column.rejected_features {
       width: 5%;
       text-align: center; }
     .project .column.users {

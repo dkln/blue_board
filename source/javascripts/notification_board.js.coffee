@@ -1,5 +1,5 @@
 NotificationBoard =
-  url: '/notifications'
+  url: '/notifications.json'
 
   oldNotificationPayload: ''
 

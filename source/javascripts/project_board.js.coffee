@@ -1,5 +1,5 @@
 ProjectBoard =
-  url: 'projects'
+  url: 'projects.json'
 
   projects: []
 
@@ -43,7 +43,7 @@ ProjectBoard =
             <h2></h2>
             <div class='separator'></div>
           </div>
-          <div class='rejected_stories column'>
+          <div class='rejected_features column'>
             <h2></h2>
             <div class='separator'></div>
           </div>
@@ -92,7 +92,7 @@ ProjectBoard =
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
     element.find('.errors h2').text(@projects[index].errors)
-    element.find('.rejected_stories h2').text(@projects[index].failed_feature_count)
+    element.find('.rejected_features h2').text(@projects[index].rejected_feature_count)
 
     if @projects[index].errors > 0
       element.addClass('error')

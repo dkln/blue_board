@@ -2,7 +2,7 @@
   var NotificationBoard;
 
   NotificationBoard = {
-    url: '/notifications',
+    url: '/notifications.json',
     oldNotificationPayload: '',
     notifications: [],
     index: 0,
