@@ -123,11 +123,12 @@ ProjectBoard =
         element.find('.users').append("<img src='#{user}' />")
 
   setProgress: (element, index) ->
-    element.find('.progress .bar').width("#{@progressWidth(index)}%")
+    maxWidth = element.find('.progress').width() - 22
+    element.find('.progress .bar').width("#{@progressWidthFactor(index) * maxWidth}px")
     element.find('.progress .count').text("#{@projects[index].delivered_feature_count}/#{@projects[index].feature_count}")
 
-  progressWidth: (index) ->
-    (100 / @projects[index].feature_count) * @projects[index].delivered_feature_count
+  progressWidthFactor: (index) ->
+    @projects[index].delivered_feature_count / @projects[index].feature_count
 
   update: ->
     $.ajax(

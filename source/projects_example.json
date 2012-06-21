@@ -16,7 +16,7 @@
     "name":"A failed project",
     "progress":false,
     "feature_count":10,
-    "delivered_feature_count":8,
+    "delivered_feature_count":10,
     "errors":0,
     "rejected_stories":2,
     "failed":true,

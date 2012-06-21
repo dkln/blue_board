@@ -1,3 +1,37 @@
+@-webkit-keyframes blinker
+  from
+    opacity: 1.0
+
+  to
+    opacity: 0.0
+
+.notifications
+  font-family: 'dotmatri-webfont'
+  color: #0a0
+  right: 0px
+  top: 0px
+  font-size: 25px
+  text-transform: uppercase
+  text-align: left
+  +border-radius(8px)
+  +background(linear-gradient(top, #020, #030))
+  +single-box-shadow(rgba(0, 0, 0, .2), 0px, 0px, 6px, 6px, inset)
+  height: 117px
+  border: 2px solid #000
+  border-bottom: 2px solid #333
+  margin-right: 360px
+  +rotateX(0deg)
+  +single-text-shadow(rgba(0, 255, 0, .2), 0px, 0px, 6px)
+
+  p
+    margin: 15px
+
+  .blink
+    -webkit-animation-name: blinker
+    -webkit-animation-iteration-count: infinite
+    -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0)
+    -webkit-animation-duration: 1s
+
 .notification
   position: absolute
   left: 10px
