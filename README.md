@@ -34,52 +34,52 @@ There are two types of JSON payloads. The current project status and notificatio
 
 Example of JSON payload:
 
-  [
-    {
-      "name":"This is some project",
-      "progress":false,
-      "feature_count":25,
-      "delivered_feature_count":18,
-      "errors":0,
-      "rejected_feature_count":0,
-      "failed":false,
-      "contributors": [
-          "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140", "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+      [
+        {
+          "name":"This is some project",
+          "progress":false,
+          "feature_count":25,
+          "delivered_feature_count":18,
+          "errors":0,
+          "rejected_feature_count":0,
+          "failed":false,
+          "contributors": [
+              "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140", "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+          ]
+        },
+        {
+          "name":"A failed project",
+          "progress":false,
+          "feature_count":10,
+          "delivered_feature_count":10,
+          "errors":0,
+          "rejected_feature_count":2,
+          "failed":true,
+          "contributors": [
+            "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+          ]
+        },
+        {
+          "name":"A project with errors",
+          "progress":false,
+          "feature_count":17,
+          "delivered_feature_count":12,
+          "errors":37,
+          "rejected_feature_count":10,
+          "failed":false,
+          "contributors": []
+        },
+        {
+          "name":"Building in progress",
+          "progress":true,
+          "feature_count":10,
+          "delivered_feature_count":0,
+          "errors":0,
+          "rejected_feature_count":1,
+          "failed":false,
+          "contributors": []
+        }
       ]
-    },
-    {
-      "name":"A failed project",
-      "progress":false,
-      "feature_count":10,
-      "delivered_feature_count":10,
-      "errors":0,
-      "rejected_feature_count":2,
-      "failed":true,
-      "contributors": [
-        "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
-      ]
-    },
-    {
-      "name":"A project with errors",
-      "progress":false,
-      "feature_count":17,
-      "delivered_feature_count":12,
-      "errors":37,
-      "rejected_feature_count":10,
-      "failed":false,
-      "contributors": []
-    },
-    {
-      "name":"Building in progress",
-      "progress":true,
-      "feature_count":10,
-      "delivered_feature_count":0,
-      "errors":0,
-      "rejected_feature_count":1,
-      "failed":false,
-      "contributors": []
-    }
-  ]
 
 
 * name: Short description for the project.
