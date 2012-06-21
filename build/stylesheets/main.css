@@ -377,7 +377,8 @@ body {
         -webkit-border-bottom-right-radius: 3px;
         -ms-border-bottom-right-radius: 3px;
         -o-border-bottom-right-radius: 3px;
-        border-bottom-right-radius: 3px; }
+        border-bottom-right-radius: 3px;
+        margin-right: 0; }
       .message .time span.animate-hide {
         -webkit-transform: rotateX(90deg);
         transform: rotateX(90deg);
