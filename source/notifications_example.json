@@ -5,7 +5,7 @@
     "external_identifier":"1337",
     "id":1,
     "service":"pivotal",
-    "severity":"ok",
+    "status":"ok",
     "updated_at":"2012-06-19T06:50:30Z"
   },
   {
@@ -14,7 +14,7 @@
     "external_identifier":"1338",
     "id":2,
     "service":"pivotal",
-    "severity":"notify",
+    "status":"notify",
     "updated_at":"2012-06-19T06:50:30Z"
   },
   {
@@ -23,7 +23,7 @@
     "external_identifier":"1339",
     "id":3,
     "service":"pivotal",
-    "severity":"fail",
+    "status":"fail",
     "updated_at":"2012-06-19T06:50:30Z"
   }
 ]

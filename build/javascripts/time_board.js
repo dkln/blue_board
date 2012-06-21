@@ -13,7 +13,7 @@
       var changedIndex, elements, i, newString, oldString;
       oldString = this.getDisplayString();
       newString = this.getCurrentString();
-      elements = $('.message .time span');
+      elements = $('.time span');
       i = 0;
       changedIndex = 0;
       while (i < newString.length) {
@@ -23,15 +23,15 @@
         }
         i++;
       }
-      return $('.message .time').data('time', newString);
+      return $('.time').data('time', newString);
     },
     getDisplayString: function() {
-      return $('.message .time').data('time');
+      return $('.time').data('time');
     },
     getCurrentString: function() {
       var newTime;
       newTime = new Date();
-      return "" + (this.format(newTime.getHours())) + ":" + (this.format(newTime.getMinutes()));
+      return "" + (this.format(newTime.getHours())) + (this.format(newTime.getMinutes()));
     },
     changeElement: function(index, element, newToken) {
       setTimeout((function() {

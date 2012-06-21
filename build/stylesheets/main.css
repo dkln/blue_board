@@ -46,37 +46,59 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
+@font-face {
+  font-family: "dotmatri-webfont";
+  src: url("dotmatri-webfont.eot");
+  src: url("dotmatri-webfont.eot?#iefix") format("embedded-opentype"), url("dotmatri-webfont.woff") format("woff"), url("dotmatri-webfont.ttf") format("truetype"), url("dotmatri-webfont.svg#dotmatri-webfont") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
   font-family: "Oswald", sans-serif;
-  background-color: black;
   color: white;
-  padding: 40px;
+  padding: 80px;
   font-size: 25px;
   font-weight: normal;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(100%, #333333));
-  background: -webkit-linear-gradient(top, #000000, #333333);
-  background: -moz-linear-gradient(top, #000000, #333333);
-  background: -o-linear-gradient(top, #000000, #333333);
-  background: -ms-linear-gradient(top, #000000, #333333);
-  background: linear-gradient(top, #000000, #333333); }
+  background: url('/images/background_grain.png'); }
 
-.canvas {
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-box-shadow: 0px 0px 5px #333333;
-  -moz-box-shadow: 0px 0px 5px #333333;
-  box-shadow: 0px 0px 5px #333333;
-  background-color: #282828;
-  border: 4px solid #555555;
-  border-collapse: separate;
-  border-spacing: 10px;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  display: table; }
+.ridge {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(255, 255, 255, 0.5); }
+  .ridge .outer-canvas {
+    border: 10px solid rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px; }
+    .ridge .outer-canvas .canvas {
+      -webkit-border-radius: 16px;
+      -moz-border-radius: 16px;
+      -ms-border-radius: 16px;
+      -o-border-radius: 16px;
+      border-radius: 16px;
+      -webkit-box-shadow: inset 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #222222), color-stop(100%, #333333));
+      background: -webkit-linear-gradient(top, #222222, #333333);
+      background: -moz-linear-gradient(top, #222222, #333333);
+      background: -o-linear-gradient(top, #222222, #333333);
+      background: -ms-linear-gradient(top, #222222, #333333);
+      background: linear-gradient(top, #222222, #333333);
+      border-collapse: separate;
+      border-spacing: 10px;
+      border: 2px solid black;
+      border-bottom: 2px solid #666666;
+      padding: 10px; }
 
 .project {
   display: table;
@@ -93,42 +115,33 @@ body {
   -o-transition: 0.3s;
   transition: 0.3s; }
   .project .column {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #555555));
-    background: -webkit-linear-gradient(top, #333333, #555555);
-    background: -moz-linear-gradient(top, #333333, #555555);
-    background: -o-linear-gradient(top, #333333, #555555);
-    background: -ms-linear-gradient(top, #333333, #555555);
-    background: linear-gradient(top, #333333, #555555);
-    text-shadow: rgba(0, 0, 0, 0.75) 0px 1px 4px;
-    -webkit-box-shadow: 0px 0px 5px black;
-    -moz-box-shadow: 0px 0px 5px black;
-    box-shadow: 0px 0px 5px black;
-    border: 2px solid #555555;
+    -webkit-box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.33);
+    box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.33);
+    border: 1px solid black;
+    border-bottom-color: #444444;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #222222), color-stop(100%, #444444));
+    background: -webkit-linear-gradient(top, #222222, #444444);
+    background: -moz-linear-gradient(top, #222222, #444444);
+    background: -o-linear-gradient(top, #222222, #444444);
+    background: -ms-linear-gradient(top, #222222, #444444);
+    background: linear-gradient(top, #222222, #444444);
+    text-shadow: black 0 0 4px;
     padding: 10px;
     display: table-cell;
-    vertical-align: middle; }
-    .project .column:first-child {
-      -moz-border-radius-topleft: 3px;
-      -webkit-border-top-left-radius: 3px;
-      -ms-border-top-left-radius: 3px;
-      -o-border-top-left-radius: 3px;
-      border-top-left-radius: 3px;
-      -moz-border-radius-bottomleft: 3px;
-      -webkit-border-bottom-left-radius: 3px;
-      -ms-border-bottom-left-radius: 3px;
-      -o-border-bottom-left-radius: 3px;
-      border-bottom-left-radius: 3px; }
-    .project .column:last-child {
-      -moz-border-radius-topright: 3px;
-      -webkit-border-top-right-radius: 3px;
-      -ms-border-top-right-radius: 3px;
-      -o-border-top-right-radius: 3px;
-      border-top-right-radius: 3px;
-      -moz-border-radius-bottomright: 3px;
-      -webkit-border-bottom-right-radius: 3px;
-      -ms-border-bottom-right-radius: 3px;
-      -o-border-bottom-right-radius: 3px;
-      border-bottom-right-radius: 3px; }
+    vertical-align: middle;
+    position: relative; }
+    .project .column .separator {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.25); }
     .project .column.icon {
       width: 5%;
       text-align: center; }
@@ -142,17 +155,22 @@ body {
       text-align: center;
       position: relative; }
       .project .column.progress .bar {
-        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #909090), color-stop(100%, #ffffff));
-        background: -webkit-linear-gradient(top, #909090, #ffffff);
-        background: -moz-linear-gradient(top, #909090, #ffffff);
-        background: -o-linear-gradient(top, #909090, #ffffff);
-        background: -ms-linear-gradient(top, #909090, #ffffff);
-        background: linear-gradient(top, #909090, #ffffff);
+        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.4)));
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+        background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+        background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+        background: linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+        -webkit-box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.33);
+        -moz-box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.33);
+        box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.33);
         -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
         -ms-border-radius: 2px;
         -o-border-radius: 2px;
         border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         -webkit-transition-property: width;
         -moz-transition-property: width;
         -ms-transition-property: width;
@@ -164,12 +182,10 @@ body {
         -o-transition-duration: 2s;
         transition-duration: 2s;
         position: absolute;
-        top: -2px;
-        left: -2px;
-        border: 2px solid white;
+        top: 10px;
+        left: 10px;
         display: block;
-        width: 0px;
-        height: 100%; }
+        height: 36px; }
       .project .column.progress .count {
         position: absolute;
         top: 0;
@@ -190,22 +206,18 @@ body {
         vertical-align: middle;
         *vertical-align: auto;
         margin-right: 5px;
-        padding: 2px;
+        padding: 1px;
         height: 30px;
-        background-color: white;
-        -webkit-box-shadow: 0px 0px 5px #333333;
-        -moz-box-shadow: 0px 0px 5px #333333;
-        box-shadow: 0px 0px 5px #333333; }
+        background-color: white; }
         .project .column.users img {
           *display: inline; }
   .project.failed .column {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #880000), color-stop(100%, #bb0000));
-    background: -webkit-linear-gradient(top, #880000, #bb0000);
-    background: -moz-linear-gradient(top, #880000, #bb0000);
-    background: -o-linear-gradient(top, #880000, #bb0000);
-    background: -ms-linear-gradient(top, #880000, #bb0000);
-    background: linear-gradient(top, #880000, #bb0000);
-    border: 2px solid #bb0000; }
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bb0000), color-stop(100%, #880000));
+    background: -webkit-linear-gradient(top, #bb0000, #880000);
+    background: -moz-linear-gradient(top, #bb0000, #880000);
+    background: -o-linear-gradient(top, #bb0000, #880000);
+    background: -ms-linear-gradient(top, #bb0000, #880000);
+    background: linear-gradient(top, #bb0000, #880000); }
     .project.failed .column .icon {
       color: #bb0000; }
   .project.error .icon i.icon-attention {
@@ -225,13 +237,12 @@ body {
     .project.building .icon i.icon-clock-alt {
       *display: inline; }
   .project.building .column {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #aa8800), color-stop(100%, #ccaa00));
-    background: -webkit-linear-gradient(top, #aa8800, #ccaa00);
-    background: -moz-linear-gradient(top, #aa8800, #ccaa00);
-    background: -o-linear-gradient(top, #aa8800, #ccaa00);
-    background: -ms-linear-gradient(top, #aa8800, #ccaa00);
-    background: linear-gradient(top, #aa8800, #ccaa00);
-    border: 2px solid #ccaa00; }
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ccaa00), color-stop(50%, #aa8800), color-stop(100%, #ccaa00));
+    background: -webkit-linear-gradient(top, #ccaa00 0%, #aa8800 50%, #ccaa00 100%);
+    background: -moz-linear-gradient(top, #ccaa00 0%, #aa8800 50%, #ccaa00 100%);
+    background: -o-linear-gradient(top, #ccaa00 0%, #aa8800 50%, #ccaa00 100%);
+    background: -ms-linear-gradient(top, #ccaa00 0%, #aa8800 50%, #ccaa00 100%);
+    background: linear-gradient(top, #ccaa00 0%, #aa8800 50%, #ccaa00 100%); }
   .project.animate-hide {
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -241,22 +252,16 @@ body {
     -webkit-transform: rotateX(90deg);
     transform: rotateX(90deg); }
 
+.project-header .project .column {
+  text-align: center;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(100%, #222222));
+  background: -webkit-linear-gradient(top, #000000, #222222);
+  background: -moz-linear-gradient(top, #000000, #222222);
+  background: -o-linear-gradient(top, #000000, #222222);
+  background: -ms-linear-gradient(top, #000000, #222222);
+  background: linear-gradient(top, #000000, #222222); }
+
 .block {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #222222), color-stop(100%, #333333));
-  background: -webkit-linear-gradient(#222222, #333333);
-  background: -moz-linear-gradient(#222222, #333333);
-  background: -o-linear-gradient(#222222, #333333);
-  background: -ms-linear-gradient(#222222, #333333);
-  background: linear-gradient(#222222, #333333);
-  -webkit-box-shadow: inset 1px 1px 10px 5px #111111;
-  -moz-box-shadow: inset 1px 1px 10px 5px #111111;
-  box-shadow: inset 1px 1px 10px 5px #111111;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  border: 2px solid #111111;
   padding: 10px;
   display: table-cell; }
 
@@ -310,168 +315,135 @@ body {
         -o-border-bottom-right-radius: 3px;
         border-bottom-right-radius: 3px; }
 
-.message {
-  text-transform: uppercase;
-  color: white;
-  text-align: center;
-  font-size: 30px;
+.notification-header {
   position: relative;
-  margin: 15px 0 35px 0; }
-  .message .time {
-    position: absolute;
-    left: 5px;
-    top: 4px; }
-    .message .time span {
-      display: -moz-inline-box;
-      -moz-box-orient: vertical;
-      display: inline-block;
-      vertical-align: middle;
-      *vertical-align: auto;
-      -webkit-transform: rotateX(0deg);
-      transform: rotateX(0deg);
+  height: 115px;
+  margin: 4px;
+  margin-bottom: 13px; }
+
+@-webkit-keyframes blinker {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+.notifications {
+  font-family: "dotmatri-webfont";
+  color: #00aa00;
+  right: 0px;
+  top: 0px;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: left;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #002200), color-stop(100%, #003300));
+  background: -webkit-linear-gradient(top, #002200, #003300);
+  background: -moz-linear-gradient(top, #002200, #003300);
+  background: -o-linear-gradient(top, #002200, #003300);
+  background: -ms-linear-gradient(top, #002200, #003300);
+  background: linear-gradient(top, #002200, #003300);
+  -webkit-box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, 0.2);
+  height: 117px;
+  border: 2px solid black;
+  border-bottom: 2px solid #333333;
+  margin-right: 360px;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  text-shadow: rgba(0, 255, 0, 0.2) 0px 0px 6px; }
+  .notifications p {
+    margin: 15px; }
+  .notifications .blink {
+    -webkit-animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    -webkit-animation-duration: 1s; }
+  .notifications.fail {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #220000), color-stop(100%, #330000));
+    background: -webkit-linear-gradient(top, #220000, #330000);
+    background: -moz-linear-gradient(top, #220000, #330000);
+    background: -o-linear-gradient(top, #220000, #330000);
+    background: -ms-linear-gradient(top, #220000, #330000);
+    background: linear-gradient(top, #220000, #330000);
+    text-shadow: rgba(255, 0, 0, 0.2) 0px 0px 6px;
+    color: #cc0000; }
+
+.notification-header .time {
+  position: absolute;
+  right: 0px;
+  top: 0px; }
+  .notification-header .time span {
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background-color: black;
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #111111), color-stop(48%, #333333), color-stop(50%, #333333), color-stop(52%, #333333), color-stop(100%, #111111));
+    background: -webkit-linear-gradient(top, #111111 0%, #333333 48%, #333333 50%, #333333 52%, #111111 100%);
+    background: -moz-linear-gradient(top, #111111 0%, #333333 48%, #333333 50%, #333333 52%, #111111 100%);
+    background: -o-linear-gradient(top, #111111 0%, #333333 48%, #333333 50%, #333333 52%, #111111 100%);
+    background: -ms-linear-gradient(top, #111111 0%, #333333 48%, #333333 50%, #333333 52%, #111111 100%);
+    background: linear-gradient(top, #111111 0%, #333333 48%, #333333 50%, #333333 52%, #111111 100%);
+    border: 1px solid black;
+    border-top: 1px solid #333333;
+    -webkit-box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    margin-right: 2px;
+    text-shadow: 0px 2px 0px black;
+    width: 77px;
+    height: 115px;
+    line-height: 115px;
+    text-align: center; }
+    .notification-header .time span {
+      *display: inline; }
+    .notification-header .time span:last-child {
+      margin-right: 0; }
+    .notification-header .time span.animate-hide {
+      -webkit-transform: rotateX(90deg);
+      transform: rotateX(90deg);
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       -ms-transition: 0.5s;
       -o-transition: 0.5s;
-      transition: 0.5s;
-      background-color: white;
-      color: black;
-      font-size: 70px;
-      font-weight: bold;
-      -webkit-box-shadow: 0px 0px 5px black;
-      -moz-box-shadow: 0px 0px 5px black;
-      box-shadow: 0px 0px 5px black;
-      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(48%, #cccccc), color-stop(50%, #bbbbbb), color-stop(52%, #cccccc), color-stop(100%, #eeeeee));
-      background: -webkit-linear-gradient(top, #eeeeee 0%, #cccccc 48%, #bbbbbb 50%, #cccccc 52%, #eeeeee 100%);
-      background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 48%, #bbbbbb 50%, #cccccc 52%, #eeeeee 100%);
-      background: -o-linear-gradient(top, #eeeeee 0%, #cccccc 48%, #bbbbbb 50%, #cccccc 52%, #eeeeee 100%);
-      background: -ms-linear-gradient(top, #eeeeee 0%, #cccccc 48%, #bbbbbb 50%, #cccccc 52%, #eeeeee 100%);
-      background: linear-gradient(top, #eeeeee 0%, #cccccc 48%, #bbbbbb 50%, #cccccc 52%, #eeeeee 100%);
-      border: 1px solid white;
-      margin-top: -25px;
-      margin-right: 2px;
-      text-shadow: 0px 2px 0px white;
-      width: 67px;
-      height: 115px;
-      line-height: 115px; }
-      .message .time span {
-        *display: inline; }
-      .message .time span:first-child {
-        -moz-border-radius-topleft: 3px;
-        -webkit-border-top-left-radius: 3px;
-        -ms-border-top-left-radius: 3px;
-        -o-border-top-left-radius: 3px;
-        border-top-left-radius: 3px;
-        -moz-border-radius-bottomleft: 3px;
-        -webkit-border-bottom-left-radius: 3px;
-        -ms-border-bottom-left-radius: 3px;
-        -o-border-bottom-left-radius: 3px;
-        border-bottom-left-radius: 3px; }
-      .message .time span:last-child {
-        -moz-border-radius-topright: 3px;
-        -webkit-border-top-right-radius: 3px;
-        -ms-border-top-right-radius: 3px;
-        -o-border-top-right-radius: 3px;
-        border-top-right-radius: 3px;
-        -moz-border-radius-bottomright: 3px;
-        -webkit-border-bottom-right-radius: 3px;
-        -ms-border-bottom-right-radius: 3px;
-        -o-border-bottom-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-        margin-right: 0; }
-      .message .time span.animate-hide {
-        -webkit-transform: rotateX(90deg);
-        transform: rotateX(90deg);
-        -webkit-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -o-transition: 0.5s;
-        transition: 0.5s; }
-  .message .date {
+      transition: 0.5s; }
+    .notification-header .time span.minutes {
+      margin-left: 20px; }
+  .notification-header .time .separator1, .notification-header .time .separator2 {
+    position: absolute;
+    top: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    width: 156px;
+    margin-top: -1px; }
+  .notification-header .time .separator1 {
+    left: 0px; }
+  .notification-header .time .separator2 {
+    right: 3px; }
+  .notification-header .time .date {
     position: absolute;
     top: 105px;
     left: 2px;
     right: 2px;
     padding: 10px; }
-  .message h1 {
-    text-shadow: black 0px 0px 1px; }
-
-.notification {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 0px;
-  text-transform: uppercase;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s; }
-  .notification .message {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    text-shadow: rgba(0, 0, 0, 0.75) 0px 1px 4px;
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #555555));
-    background: -webkit-linear-gradient(top, #333333, #555555);
-    background: -moz-linear-gradient(top, #333333, #555555);
-    background: -o-linear-gradient(top, #333333, #555555);
-    background: -ms-linear-gradient(top, #333333, #555555);
-    background: linear-gradient(top, #333333, #555555);
-    -webkit-box-shadow: 0px 0px 5px black;
-    -moz-box-shadow: 0px 0px 5px black;
-    box-shadow: 0px 0px 5px black;
-    position: absolute;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid #555555;
-    text-align: center;
-    font-size: 20px;
-    min-height: 50px;
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
-    .notification .message p {
-      padding: 0;
-      margin: 0; }
-    .notification .message.fail {
-      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #880000), color-stop(100%, #bb0000));
-      background: -webkit-linear-gradient(top, #880000, #bb0000);
-      background: -moz-linear-gradient(top, #880000, #bb0000);
-      background: -o-linear-gradient(top, #880000, #bb0000);
-      background: -ms-linear-gradient(top, #880000, #bb0000);
-      background: linear-gradient(top, #880000, #bb0000);
-      border: 2px solid #bb0000; }
-    .notification .message.notify {
-      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #555555));
-      background: -webkit-linear-gradient(top, #333333, #555555);
-      background: -moz-linear-gradient(top, #333333, #555555);
-      background: -o-linear-gradient(top, #333333, #555555);
-      background: -ms-linear-gradient(top, #333333, #555555);
-      background: linear-gradient(top, #333333, #555555);
-      border: 2px solid #555555; }
-    .notification .message.ok {
-      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #008800), color-stop(100%, #00bb00));
-      background: -webkit-linear-gradient(top, #008800, #00bb00);
-      background: -moz-linear-gradient(top, #008800, #00bb00);
-      background: -o-linear-gradient(top, #008800, #00bb00);
-      background: -ms-linear-gradient(top, #008800, #00bb00);
-      background: linear-gradient(top, #008800, #00bb00);
-      border: 2px solid #00bb00; }
-    .notification .message.animate-hide {
-      -webkit-transition: 0.3s;
-      -moz-transition: 0.3s;
-      -ms-transition: 0.3s;
-      -o-transition: 0.3s;
-      transition: 0.3s;
-      -webkit-transform: rotateX(90deg);
-      transform: rotateX(90deg); }

@@ -48,10 +48,11 @@
       position: relative
 
       .bar
-        background-color: rgba(0, 0, 0, .4)
+        +background(linear-gradient(top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .4)))
+        +single-box-shadow(rgba(0, 0, 0, .33), 0, 0, 8px, 4px, inset)
+        +border-radius(2px)
         border: 1px solid rgba(0, 0, 0, .5)
         border-bottom: 1px solid rgba(255, 255, 255, .2)
-        +border-radius(6px)
         +transition-property(width)
         +transition-duration(2s)
         position: absolute

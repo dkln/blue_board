@@ -29,36 +29,14 @@
       });
     },
     updateTicker: function() {
-      var element,
-        _this = this;
-      element = $('.notification .message');
-      element.addClass('animate-hide');
-      setTimeout((function() {
-        return _this.setNewText();
-      }), 300);
-      return setTimeout((function() {
-        return element.removeClass('animate-hide');
-      }), 400);
-    },
-    setNewText: function() {
       var element, notification;
-      element = $('.notification .message');
+      element = $('.notifications');
       notification = this.notifications[this.index];
-      element.html("<i class='icon-signal'></i>" + notification.description);
-      if (notification.severity === 'ok') {
-        element.addClass('ok');
-      } else {
-        element.removeClass('ok');
-      }
-      if (notification.severity === 'fail') {
+      element.find('p').html("" + notification.description + "<span class='blink'>_</span>");
+      if (notification.status === 'fail') {
         element.addClass('fail');
       } else {
         element.removeClass('fail');
-      }
-      if (notification.severity === 'notify') {
-        element.addClass('notify');
-      } else {
-        element.removeClass('notify');
       }
       this.index++;
       if (this.index >= this.notifications.length) {
