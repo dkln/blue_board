@@ -40,9 +40,11 @@ ProjectBoard =
             <div class='separator'></div>
           </div>
           <div class='errors column'>
+            <h2></h2>
             <div class='separator'></div>
           </div>
           <div class='rejected_stories column'>
+            <h2></h2>
             <div class='separator'></div>
           </div>
           <div class='users column'>
@@ -89,8 +91,8 @@ ProjectBoard =
 
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
-    element.find('.errors').text(@projects[index].errors)
-    element.find('.rejected_stories').text(@projects[index].rejected_stories)
+    element.find('.errors h2').text(@projects[index].errors)
+    element.find('.rejected_stories h2').text(@projects[index].rejected_stories)
 
     if @projects[index].errors > 0
       element.addClass('error')

@@ -1,0 +1,58 @@
+.notification-header
+  .time
+    position: absolute
+    left: 0px
+    top: 0px
+
+    span
+      +inline-block
+      +rotateX(0deg)
+      +transition(.5s)
+      background-color: #000
+      color: #fff
+      font-size: 70px
+      font-weight: bold
+      +background(linear-gradient(top, #111 0%, #333 48%, #333 50%, #333 52%, #111 100%))
+      border: 1px solid #000
+      border-top: 1px solid #333
+      +single-box-shadow(rgba(0, 0, 0, .2), 0px, 1px, 4px, 2px)
+      +border-radius(6px)
+      margin-right: 2px
+      text-shadow: 0px 2px 0px #000
+      width: 77px
+      height: 115px
+      line-height: 115px
+      text-align: center
+
+      &:first-child
+
+      &:last-child
+        margin-right: 0
+
+      &.animate-hide
+        +rotateX(90deg)
+        +transition(.5s)
+
+      &.minutes
+        margin-left: 20px
+
+    .separator1, .separator2
+      position: absolute
+      top: 50%
+      border: 2px solid rgba(0, 0, 0, 0.5)
+      width: 78px * 2
+      margin-top: -1px
+
+    .separator1
+      left: 0px
+
+    .separator2
+      right: 3px
+
+    .date
+      position: absolute
+      top: 105px
+      left: 2px
+      right: 2px
+      padding: 10px
+

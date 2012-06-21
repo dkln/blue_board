@@ -6,7 +6,7 @@ TimeBoard =
   update: ->
     oldString = @getDisplayString()
     newString = @getCurrentString()
-    elements  = $('.message .time span')
+    elements  = $('.time span')
 
     i = 0
     changedIndex = 0
@@ -18,15 +18,15 @@ TimeBoard =
 
       i++
 
-    $('.message .time').data('time', newString)
+    $('.time').data('time', newString)
 
   getDisplayString: ->
-    $('.message .time').data('time')
+    $('.time').data('time')
 
   getCurrentString: ->
     newTime = new Date()
 
-    "#{@format(newTime.getHours())}:#{@format(newTime.getMinutes())}"
+    "#{@format(newTime.getHours())}#{@format(newTime.getMinutes())}"
 
   changeElement: (index, element, newToken) ->
     setTimeout((-> element.addClass('animate-hide')), index * 100)
