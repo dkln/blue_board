@@ -320,7 +320,7 @@ body {
   .message .time {
     position: absolute;
     left: 5px;
-    top: 0px; }
+    top: 4px; }
     .message .time span {
       display: -moz-inline-box;
       -moz-box-orient: vertical;
