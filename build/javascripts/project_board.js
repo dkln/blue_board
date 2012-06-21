@@ -2,7 +2,7 @@
   var ProjectBoard;
 
   ProjectBoard = {
-    url: '/projects_example.json',
+    url: 'projects',
     projects: [],
     oldProjectCount: 0,
     init: function() {
@@ -70,7 +70,7 @@
       return this.projects[index].rejects > 0 && this.projects[index].rejects !== element.find('.rejects').text();
     },
     isUsersChanged: function(element, index) {
-      return this.projects[index].users !== this.getImages(element);
+      return this.projects[index].contributors !== this.getImages(element);
     },
     getImages: function(element) {
       var image, images, _i, _len, _ref, _results;
@@ -87,7 +87,7 @@
     setProject: function(element, index) {
       element.find('.name h2').text(this.projects[index].name);
       element.find('.errors h2').text(this.projects[index].errors);
-      element.find('.rejected_stories h2').text(this.projects[index].rejected_stories);
+      element.find('.rejected_stories h2').text(this.projects[index].failed_feature_count);
       if (this.projects[index].errors > 0) {
         element.addClass('error');
       } else {
@@ -121,7 +121,7 @@
     setUsers: function(element, index) {
       var user, _i, _len, _ref, _results;
       if (this.isUsersChanged(element, index)) {
-        _ref = this.projects[index].users;
+        _ref = this.projects[index].contributors;
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           user = _ref[_i];

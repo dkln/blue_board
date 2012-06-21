@@ -148,7 +148,7 @@ body {
       .project .column.icon i {
         display: none; }
     .project .column.name {
-      width: 40%; }
+      width: 30%; }
     .project .column.progress {
       width: 20%;
       padding: 0;
@@ -198,7 +198,7 @@ body {
       width: 5%;
       text-align: center; }
     .project .column.users {
-      width: 25%; }
+      width: 35%; }
       .project .column.users img {
         display: -moz-inline-box;
         -moz-box-orient: vertical;

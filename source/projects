@@ -7,9 +7,11 @@
     "errors":0,
     "rejected_stories":0,
     "failed":false,
-    "users": [
-      "https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140",
-      "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+    "contributors": [
+      {
+        "contributor":{"login":"Someone", "avatar_url":"https://secure.gravatar.com/avatar/14690f57c2f127656e1fdda876ec7e27?s=140"},
+        "contributor":{"login":"Someone", "avatar_url":"https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"}
+      }
     ]
   },
   {
@@ -20,8 +22,10 @@
     "errors":0,
     "rejected_stories":2,
     "failed":true,
-    "users": [
-      "https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"
+    "contributors": [
+      {
+        "contributor":{"login":"Someone", "avatar_url":"https://secure.gravatar.com/avatar/9ffbc194f775c7bdc155ad6e833df81e?s=140"}
+      }
     ]
   },
   {
@@ -32,7 +36,7 @@
     "errors":37,
     "rejected_stories":10,
     "failed":false,
-    "users": []
+    "contributors": []
   },
   {
     "name":"Building in progress",
@@ -42,6 +46,6 @@
     "errors":0,
     "rejected_stories":1,
     "failed":false,
-    "users": []
+    "contributors": []
   }
 ]

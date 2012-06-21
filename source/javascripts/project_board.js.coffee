@@ -1,5 +1,5 @@
 ProjectBoard =
-  url: '/projects_example.json'
+  url: 'projects'
 
   projects: []
 
@@ -83,7 +83,7 @@ ProjectBoard =
     @projects[index].rejects > 0 && @projects[index].rejects != element.find('.rejects').text()
 
   isUsersChanged: (element, index) ->
-    @projects[index].users != @getImages(element)
+    @projects[index].contributors != @getImages(element)
 
   getImages: (element) ->
     if element.find('img')
@@ -92,7 +92,7 @@ ProjectBoard =
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
     element.find('.errors h2').text(@projects[index].errors)
-    element.find('.rejected_stories h2').text(@projects[index].rejected_stories)
+    element.find('.rejected_stories h2').text(@projects[index].failed_feature_count)
 
     if @projects[index].errors > 0
       element.addClass('error')
@@ -119,7 +119,7 @@ ProjectBoard =
 
   setUsers: (element, index) ->
     if @isUsersChanged(element, index)
-      for user in @projects[index].users
+      for user in @projects[index].contributors
         element.find('.users').append("<img src='#{user}' />")
 
   setProgress: (element, index) ->
