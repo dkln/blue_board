@@ -37,7 +37,7 @@ ProjectBoard =
             <span class='count'></span>
           </div>
           <div class='errors column'></div>
-          <div class='rejects column'></div>
+          <div class='rejected_stories column'></div>
           <div class='users column'></div>
         </div>
       ")
@@ -81,7 +81,7 @@ ProjectBoard =
   setProject: (element, index) ->
     element.find('.name h2').text(@projects[index].name)
     element.find('.errors').text(@projects[index].errors)
-    element.find('.rejected_stories').text(@projects[index].rejects)
+    element.find('.rejected_stories').text(@projects[index].rejected_stories)
 
     if @projects[index].errors > 0
       element.addClass('error')

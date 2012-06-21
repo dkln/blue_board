@@ -27,7 +27,7 @@
       var index, _i, _results;
       _results = [];
       for (index = _i = 1; 1 <= numberToBuild ? _i <= numberToBuild : _i >= numberToBuild; index = 1 <= numberToBuild ? ++_i : --_i) {
-        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>          </div>          <div class='name column'>            <h2></h2>          </div>          <div class='progress column'>            <span class='bar'></span>            <span class='count'></span>          </div>          <div class='errors column'></div>          <div class='rejects column'></div>          <div class='users column'></div>        </div>      "));
+        _results.push($('.projects').append("        <div class='project'>          <div class='icon column'>            <i class='icon-attention'></i>            <i class='icon-clock-alt'></i>          </div>          <div class='name column'>            <h2></h2>          </div>          <div class='progress column'>            <span class='bar'></span>            <span class='count'></span>          </div>          <div class='errors column'></div>          <div class='rejected_stories column'></div>          <div class='users column'></div>        </div>      "));
       }
       return _results;
     },
@@ -87,7 +87,7 @@
     setProject: function(element, index) {
       element.find('.name h2').text(this.projects[index].name);
       element.find('.errors').text(this.projects[index].errors);
-      element.find('.rejects').text(this.projects[index].rejects);
+      element.find('.rejected_stories').text(this.projects[index].rejected_stories);
       if (this.projects[index].errors > 0) {
         element.addClass('error');
       } else {
