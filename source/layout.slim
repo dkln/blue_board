@@ -1,43 +1,10 @@
 html
   head
-    == stylesheet_link_tag 'main.css'
-    == stylesheet_link_tag 'modernpics.css'
-    == javascript_include_tag 'jquery-1.7.2.min.js'
-    == javascript_include_tag 'time_board.js'
-    == javascript_include_tag 'date_board.js'
-    == javascript_include_tag 'project_board.js'
-    == javascript_include_tag 'notification_board.js'
-
     title BlueBoard
+    == partial :head
 
   body
     .ridge
       .outer-canvas
         .canvas
-          .notification-header
-            .time(data-time='00:00')
-              span 0
-              span 0
-              span.minutes 0
-              span 0
-
-              .separator1
-              .separator2
-
-            .notifications
-              p
-                | All your base are belong to us
-                span.blink _
-
-          .project-header
-            .project
-              .column.icon
-              .column.name project
-              .column.progress delivered
-              .column.errors
-                i.icon-attention
-              .column.rejected_features
-                i.icon-cancel
-              .column.users project members
-
-          .projects
+          == yield

@@ -47,7 +47,7 @@ ProjectBoard =
             <h2></h2>
             <div class='separator'></div>
           </div>
-          <div class='users column'>
+          <div class='contributers column'>
             <div class='separator'></div>
           </div>
         </div>
@@ -120,7 +120,7 @@ ProjectBoard =
   setUsers: (element, index) ->
     if @isUsersChanged(element, index)
       for user in @projects[index].contributors
-        element.find('.users').append("<img src='#{user}' />")
+        element.find('.contributers').append("<img src='#{user}' />")
 
   setProgress: (element, index) ->
     maxWidth = element.find('.progress').width() - 22
