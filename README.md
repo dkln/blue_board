@@ -9,7 +9,7 @@ Inspired by the very slick Panic! board and NS "blauwe bord"
 
 ## Server
 
-Can be used in combination with Robin Roestenburg's compatible [BlueBoard server](https://github.com/robinroestenburg/blue_board_server).
+Can be used in combination with Robin Roestenburg's compatible [Bluebeard server](https://github.com/robinroestenburg/bluebeard).
 
 ## Installation
 
