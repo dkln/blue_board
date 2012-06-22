@@ -25,12 +25,14 @@ NotificationBoard =
     element       = $('.notifications')
     notification  = @notifications[@index]
 
-    element.find('p').html("#{notification.description}<span class='blink'>_</span>")
+    if notification
+      if notification.description
+        element.find('p').html("#{notification.description}<span class='blink'>_</span>")
 
-    if notification.status == 'fail'
-      element.addClass('fail')
-    else
-      element.removeClass('fail')
+      if notification.status == 'fail'
+        element.addClass('fail')
+      else
+        element.removeClass('fail')
 
     @index++
     @index = 0 if @index >= @notifications.length

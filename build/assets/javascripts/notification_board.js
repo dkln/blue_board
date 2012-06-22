@@ -32,11 +32,15 @@
       var element, notification;
       element = $('.notifications');
       notification = this.notifications[this.index];
-      element.find('p').html("" + notification.description + "<span class='blink'>_</span>");
-      if (notification.status === 'fail') {
-        element.addClass('fail');
-      } else {
-        element.removeClass('fail');
+      if (notification) {
+        if (notification.description) {
+          element.find('p').html("" + notification.description + "<span class='blink'>_</span>");
+        }
+        if (notification.status === 'fail') {
+          element.addClass('fail');
+        } else {
+          element.removeClass('fail');
+        }
       }
       this.index++;
       if (this.index >= this.notifications.length) {
