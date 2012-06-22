@@ -1,7 +1,7 @@
 .project
   .column.icon
-  .column.name project
-  .column.progress delivered
+  .column.name= I18n.t("project.header.name")
+  .column.progress= I18n.t("project.header.progress")
 
   .column.errors
     i.icon-attention
@@ -9,4 +9,4 @@
   .column.rejected_features
     i.icon-cancel
 
-  .column.contributers project members
+  .column.contributers= I18n.t("project.header.contributers")

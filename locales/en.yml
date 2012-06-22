@@ -1,0 +1,9 @@
+en:
+  title: BlueBoard
+  notification:
+    message: All your base are belong to us
+  project:
+    header:
+      name: Project
+      progress: Delivered
+      contributers: Project Members
