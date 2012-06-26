@@ -119,6 +119,8 @@ ProjectBoard =
 
   setUsers: (element, index) ->
     if @isUsersChanged(element, index)
+      element.find('.contributors img').remove()
+
       for user in @projects[index].contributors
         element.find('.contributers').append("<img src='#{user}' />")
 

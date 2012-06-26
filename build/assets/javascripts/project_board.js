@@ -121,6 +121,7 @@
     setUsers: function(element, index) {
       var user, _i, _len, _ref, _results;
       if (this.isUsersChanged(element, index)) {
+        element.find('.contributors img').remove();
         _ref = this.projects[index].contributors;
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
