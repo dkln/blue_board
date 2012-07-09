@@ -70,7 +70,25 @@
       return this.projects[index].rejects > 0 && this.projects[index].rejects !== element.find('.rejects').text();
     },
     isUsersChanged: function(element, index) {
-      return this.projects[index].contributors !== this.getImages(element);
+      return !this.isEqual(this.projects[index].contributors, this.getImages(element));
+    },
+    isEqual: function(firstArray, secondArray) {
+      var index, _i, _ref;
+      if (firstArray.length !== secondArray.length) {
+        return false;
+      }
+      for (index = _i = 0, _ref = firstArray.length; 0 <= _ref ? _i <= _ref : _i >= _ref; index = 0 <= _ref ? ++_i : --_i) {
+        if (firstArray[index] instanceof Array && secondArray[index] instanceof Array) {
+          if (!this.isEqual(firstArray[index], secondArray[index])) {
+            return false;
+          }
+        } else {
+          if (firstArray[index] !== secondArray[index]) {
+            return false;
+          }
+        }
+      }
+      return true;
     },
     getImages: function(element) {
       var image, images, _i, _len, _ref, _results;

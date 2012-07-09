@@ -83,7 +83,16 @@ ProjectBoard =
     @projects[index].rejects > 0 && @projects[index].rejects != element.find('.rejects').text()
 
   isUsersChanged: (element, index) ->
-    @projects[index].contributors != @getImages(element)
+    not @isEqual(@projects[index].contributors, @getImages(element))
+
+  isEqual: (firstArray, secondArray) ->
+    return false unless firstArray.length is secondArray.length
+    for index in [0..firstArray.length]
+      if firstArray[index] instanceof Array and secondArray[index] instanceof Array
+        return false unless @isEqual(firstArray[index], secondArray[index])
+      else
+        return false if firstArray[index] isnt secondArray[index]
+    true
 
   getImages: (element) ->
     if element.find('img')
